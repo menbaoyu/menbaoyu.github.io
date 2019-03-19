@@ -1,27 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<!--<html lang="en" manifest="__PUBLIC__/V2/test_drum/drum3.txt">-->
-<head>
-    <title>眼圈的博客</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/V2/css/lesson.css">
-    <style>
-        *{
-            padding:0;
-            margin:0;
-            /*touch-action: none;*/
-        }
+---
+layout: default
+---
 
-    </style>
+<div class="main-post-list hidden">
 
-<body>
-<div class="container">
-    <h1>Hello World!</h1>
-    <p>眼圈的博客</p>
+  <ol class="post-list">
+    {% for post in paginator.posts %}
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="{{ post.url }}" title="访问 {{ post.title }}">{{ post.title }}</a></h2>
+      <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 250 }}&hellip;</p>
+      <div class="post-list__meta"><time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">{{ post.date | date: "%F"}}</time> &#8226; <span class="post-list__meta--tags tags">{{ post.tags | join:' ' }}</span><a class="btn-border-small" href={{ post.url }}>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    {% endfor %}
+  </ol>
+
+  {% include pagination.html %}
+
 </div>
-</body>
-
-
-</html>
