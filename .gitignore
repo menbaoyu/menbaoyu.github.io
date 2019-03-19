@@ -5,7 +5,7 @@
 _site/
 .sass-cache/
 .jekyll-metadata
-
+.idea
 
 ### OSX ###
 .DS_Store
