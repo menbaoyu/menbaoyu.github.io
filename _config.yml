@@ -26,9 +26,9 @@ blog_button:
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
-#plugins: [jekyll-paginate]
-#paginate: 10
-#paginate_path: "page/:num/"
+plugins: [jekyll-paginate]
+paginate: 5
+paginate_path: "page/:num/"
 
 # Comment
 comment:
