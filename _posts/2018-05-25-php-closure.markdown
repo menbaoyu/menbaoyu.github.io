@@ -1,6 +1,7 @@
 ---
 layout: post
 title: PHP匿名函数和闭包
+tag: php语法
 date: 2018-05-25 16:58:05
 ---
 
